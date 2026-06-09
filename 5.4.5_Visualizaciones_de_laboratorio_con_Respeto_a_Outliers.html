@@ -1,0 +1,4850 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .SubStepNum {
+        text-indent: -25.5px;
+        margin-inline-start: 50px;
+      }
+      .component__content .component__body-inner .BodyTextL50 {
+        margin-inline-start: 30px;
+      }
+      .component__content .component__body-inner .Bulletlevel1 {
+        text-indent: -19px;
+        margin-inline-start: 48px;
+      }
+      .component__content .component__body-inner .Bulletlevel2 {
+          text-indent: -19px;
+          margin-inline-start: 72px;
+      }
+      .openTextBox__inner .openTextBox__widget .ReflectionQ, .component__content .component__body-inner .SubStepAlpha {
+          text-indent: -25.5px;
+          margin-inline-start: 30px;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article 63bcfa1c3b3fa00011c47bcb remove-padding-top is-complete ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$5885060395$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top ">
+        <div class="article__header ">
+              <div class="article__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$5885060395$--><!---->
+                                    <block-view modelid="63bcfa1c3b3fa00011c47bcc" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bcfa1c3b3fa00011c47bcc" class="63bcfa1c3b3fa00011c47bcc block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bcfa1c3b3fa00011c47bcc" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$--> <div class=" block__title ">
+                      <!--?lit$5885060395$--><heading-view aria-hidden="true" id="63bcfa1c3b3fa00011c47bcc-heading-view" headingtitle="Práctica de laboratorio - Interpretación de visualizaciones con respecto a valores atípicos " modelid="63bcfa1c3b3fa00011c47bcc" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="js-heading is-complete">
+        <div class="js-heading-inner" role="heading" id="block-heading" aria-level="1">
+        <span class="aria-label"> <!--?lit$5885060395$-->Completo &nbsp;<!--?lit$5885060395$-->Práctica de laboratorio - Interpretación de visualizaciones con respecto a valores atípicos </span>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></heading-view>
+                        <div tabindex="0" role="heading" class="block__title-inner " aria-level="">
+                        <span class="accessibility-completion-indicator"><!--?lit$5885060395$-->Completo </span>
+                        <!--?lit$5885060395$-->Práctica de laboratorio - Interpretación de visualizaciones con respecto a valores atípicos </div>
+                      </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><text-view modelid="63bcfa1d3b3fa00011c47bd4" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bcfa1d3b3fa00011c47bd4" class="component text 63bcfa1d3b3fa00011c47bd4  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5885060395$--><h2>Objetivos </h2><p>En esta práctica de laboratorio, se usarán gráficos y funciones para detectar datos atípicos. </p><p><strong>Parte 1: examinar un conjunto de datos en busca de valores atípicos </strong></p><h2>Antecedentes/Escenario </h2><p>Un valor atípico es un valor o punto de datos que varía significativamente de otros en el mismo conjunto de datos. Un valor atípico puede resultar de la variabilidad en las mediciones, errores experimentales o errores humanos al ingresar los datos. </p><p>Para asegurarse de que cualquier análisis de datos sea correcto, se deben identificar los valores atípicos y luego se debe determinar la mejor manera de tratarlos. </p><h2>Recursos necesarios</h2><ul><li><p>Dispositivo móvil o PC/computadora portátil con un navegador, Microsoft 365 Excel en línea y acceso a Internet </p><p><strong>Nota</strong>: Los pasos precisos para formatear y manipular datos en Excel pueden variar entre plataformas, lenguajes y versiones. Las instrucciones de esta práctica de laboratorio se basan en la versión gratuita de Excel disponible en Office.com y es posible que deban modificarse para que coincidan con la plataforma o versión utilizada para lograr los resultados que se muestran en esta práctica de laboratorio. </p></li></ul></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bcfa1c3b3fa00011c47bcd" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bcfa1c3b3fa00011c47bcd" class="63bcfa1c3b3fa00011c47bcd block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bcfa1c3b3fa00011c47bcd" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><text-view modelid="63bcfa1d3b3fa00011c47bd5" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bcfa1d3b3fa00011c47bd5" class="component text 63bcfa1d3b3fa00011c47bd5  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5885060395$--><h2>Instrucciones</h2><h3>Parte 1: Examinar un conjunto de datos en busca de valores atípicos </h3><h4>Paso 1: Abra el conjunto de datos. </h4><ol start="1" style="list-style-type:lower-alpha"><li>Descargue el archivo <strong>Bike Sales_Outlier_Lab.xlsx </strong></li><li>Cargue el archivo en OneDrive y ábralo en MS 365 Excel en línea. </li></ol><h4>Paso 2: usar una tabla dinámica para seleccionar los datos para el análisis </h4><ol start="1" style="list-style-type:lower-alpha"><li>Haga clic en cualquier celda de la hoja de trabajo de ventas de bicicletas. </li><li>Inserte una tabla dinámica haciendo clic en <strong>Insertar </strong>(Instert) &gt; <strong>Tabla dinámica</strong> (Pivoy Table). Verifique que Nueva hoja de trabajo esté seleccionada en el cuadro de diálogo <strong>Crear tabla dinámica</strong> (Create PivotTable) y haga clic en <strong>Aceptar</strong> (OK). <p>Esto agrega una nueva hoja de trabajo para la tabla dinámica. </p></li><li>En el cuadro de diálogo <strong>Campos de tabla dinámica</strong> (PivotTable Fields), marque los campos <strong>Fecha </strong>(Date) y <strong>Cantidad_pedido </strong>(Order_Quantity) <p>La tabla dinámica se crea con dos columnas <strong>Fecha </strong>(Date) y <strong>Suma de Cantidad_pedido</strong>  (Sum of Order_Quantity. </p></li></ol><h4>Paso 3: clasificación de datos para encontrar valores atípicos </h4><p>Una forma de identificar valores atípicos es simplemente clasificando los datos. Este método funciona con pequeños conjuntos de datos donde los datos se escanean fácilmente. </p><ol start="1" style="list-style-type:lower-alpha"><li>Ordenar la columna<strong> Suma de Cantidad_pedido</strong> de mayor a menor <ol><li>Seleccione los puntos de datos en la columna <strong>Suma de Cantidad_pedido</strong>. (No seleccione el Total General ni el encabezado de la columna).</li><li>Haga clic en <strong>Ordenar y Filtrar</strong> (Sort &amp; Filter) &gt; <strong>Ordenar Descendente</strong> (Sort Descending).<p>Esto ordena los puntos de datos <strong>Cantidad_pedido</strong> de mayor a menor. </p></li></ol></li></ol></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bcfdda3b3fa00011c47bef" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bcfdda3b3fa00011c47bef" class="63bcfdda3b3fa00011c47bef block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bcfdda3b3fa00011c47bef" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><opentextbox-view modelid="63bcfe1dd9c5f600e6b30e0a" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="63bcfe1dd9c5f600e6b30e0a" class="component opentextbox 63bcfe1dd9c5f600e6b30e0a  is-full is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bcfe1dd9c5f600e6b30e0a" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5885060395$--> <div class="openTextBox__preText"><!--?lit$5885060395$-->¿Qué fecha de diciembre tuvo la mayor cantidad de ventas? ¿Cuál fue la cantidad de ventas?
+</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5885060395$-->Answer Area
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Escriba sus respuestas aquí.
+" aria-label="Escriba sus respuestas aquí.
+">&lt;!----&gt;12/19/2021	43
+&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  show">
+                        <!--?lit$5885060395$-->
+                      <!--?lit$5885060395$-->Respuesta: 19 de diciembre. La cantidad de ventas fue 43.
+
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer hide"><!--?lit$5885060395$-->Mostrar respuesta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer show"><!--?lit$5885060395$-->Ocultar respuesta</button>                    
+                      </div>
+                      <!--?lit$5885060395$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bcfea9d9c5f600e6b30e0b" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bcfea9d9c5f600e6b30e0b" class="63bcfea9d9c5f600e6b30e0b block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bcfea9d9c5f600e6b30e0b" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><opentextbox-view modelid="63bcfea9d9c5f600e6b30e0c" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="63bcfea9d9c5f600e6b30e0c" class="component opentextbox 63bcfea9d9c5f600e6b30e0c  is-full is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bcfea9d9c5f600e6b30e0c" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5885060395$--> <div class="openTextBox__preText"><!--?lit$5885060395$-->Revise los datos de la hoja de trabajo <b>Ventas de bicicletas</b> para el 19 de diciembre. ¿Qué entrada contribuye más a la suma de Cantidad_pedido en la tabla dinámica? En otras palabras, ¿qué número de pedido es el más responsable del valor atípico? </div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5885060395$-->Answer Area
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Escriba sus respuestas aquí.
+" aria-label="Escriba sus respuestas aquí.
+">&lt;!----&gt;000261765
+&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  show">
+                        <!--?lit$5885060395$-->
+                      <!--?lit$5885060395$-->Respuesta: fila 72 número de pedido 000261765
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer hide"><!--?lit$5885060395$-->Mostrar respuesta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer show"><!--?lit$5885060395$-->Ocultar respuesta</button>                    
+                      </div>
+                      <!--?lit$5885060395$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bd083e5e64e000f15e7d17" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bd083e5e64e000f15e7d17" class="63bd083e5e64e000f15e7d17 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bd083e5e64e000f15e7d17" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><text-view modelid="63bd083e5e64e000f15e7d18" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bd083e5e64e000f15e7d18" class="component text 63bd083e5e64e000f15e7d18  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5885060395$--><h4>Paso 4: use un gráfico de dispersión para encontrar valores atípicos</h4><p>Un gráfico de dispersión puede ayudar a identificar valores atípicos, especialmente en conjuntos de datos más grandes. </p><ol start="1" style="list-style-type:lower-alpha"><li>Regrese a la hoja de trabajo que contiene la tabla dinámica (Hoja1). </li><li>Copie y pegue los datos de la tabla dinámica en dos columnas en blanco (D y E).  Copie la fila del encabezado con los datos, pero no copie la fila del total general. <p>Excel no permitirá la creación de un gráfico de dispersión a partir de los datos de una tabla dinámica. Por lo tanto, los datos deben moverse a otras columnas. </p></li><li>Insertar gráfico de dispersión. <ol><li>Seleccione todas las celdas de los datos copiados y use Ordenar y filtrar para ordenarlas de manera ascendente. </li><li>Resalte la columna <strong>Suma de Cantidad_pedido</strong> en los datos copiados.</li><li>Haga clic en <strong>Insertar </strong>&gt; <strong>Dispersión </strong>y luego seleccione el gráfico de dispersión superior izquierdo en la lista desplegable.<p>Tenga en cuenta que lo visual del gráfico de dispersión hace que las ventas del 19 de diciembre<sup></sup> se destaquen fácilmente como un valor atípico de los otros puntos de datos de cantidades del pedido, como se muestra a continuación. </p></li></ol></li></ol></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bcfa1c3b3fa00011c47bce" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bcfa1c3b3fa00011c47bce" class="63bcfa1c3b3fa00011c47bce block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bcfa1c3b3fa00011c47bce" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><graphic-view modelid="63bcfa1d3b3fa00011c47bd6" class="is-left" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="graphic-inner component__inner">
+            <div data-socialgoodpulse-id="63bcfa1d3b3fa00011c47bd6" class="component graphic 63bcfa1d3b3fa00011c47bd6  is-left is-complete  ">
+                <div class="component__header-container">
+                    <base-view type="component" lowercase_component="graphic" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header graphic__header">
+              <div class="component__header-inner graphic__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+                <div class="component__widget">
+                    <!--?lit$5885060395$-->
+                        <div class="graphic__image-container ">
+                            <img id="graphic__image" aria-hidden="false" tabindex="0" class="graphic__image js-graphic-set-image-src" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnMAAAFnCAIAAABCfVhJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxY2Y1MDZmNS02Y2EzLWMyNDUtODRmOC1kNWIzMDA1OThiNDciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDRGQUEzMjVGQTUyMTFFRkFFMjJDOTBFNjUyMzRCRDYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDRGQUEzMjRGQTUyMTFFRkFFMjJDOTBFNjUyMzRCRDYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjMgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Mzk3OGY3MWEtNTIwNy01YTQyLTkyZDAtNTEzNDM4ZGJiN2Q4IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6OGFkNjBmYzktYjdjOS1jYTQ4LWI1ZTQt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" data-large="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/es-XL/assets/5a976d43fe9740c8a9f175d2af42dd4e.png" data-small="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/es-XL/assets/5a976d43fe9740c8a9f175d2af42dd4e.png" alt="de1-5.4.5-1">
+
+                            <!--?lit$5885060395$-->
+
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></graphic-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bd09b2bd9de7003641f0ff" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bd09b2bd9de7003641f0ff" class="63bd09b2bd9de7003641f0ff block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bd09b2bd9de7003641f0ff" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><text-view modelid="63bd09b2bd9de7003641f100" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bd09b2bd9de7003641f100" class="component text 63bd09b2bd9de7003641f100  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5885060395$--><ol start="4" style="list-style-type:decimal"><li>Elimine el gráfico de dispersión. </li></ol><h4>Paso 5: Uso de las funciones LARGE y SMALL para encontrar valores atípicos. </h4><p>Si hay muchos datos, las funciones LARGE y SMALL se pueden usar para extraer los valores más grandes y más pequeños, lo que puede ayudar a ver si hay valores atípicos. </p><p>Para este ejemplo, la columna <strong>Fecha </strong>es la columna D y la columna <strong>Suma de cantidad_pedido</strong> es la columna E. Las columnas de la hoja de trabajo pueden ser diferentes, por lo que debe ajustar las referencias de las celdas de función en consecuencia. </p></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bd0aaf06763100d1322bee" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bd0aaf06763100d1322bee" class="63bd0aaf06763100d1322bee block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bd0aaf06763100d1322bee" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><graphic-view modelid="63bd0aaf06763100d1322bef" class="is-left" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="graphic-inner component__inner">
+            <div data-socialgoodpulse-id="63bd0aaf06763100d1322bef" class="component graphic 63bd0aaf06763100d1322bef  is-left is-complete  ">
+                <div class="component__header-container">
+                    <base-view type="component" lowercase_component="graphic" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header graphic__header">
+              <div class="component__header-inner graphic__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+                <div class="component__widget">
+                    <!--?lit$5885060395$-->
+                        <div class="graphic__image-container ">
+                            <img id="graphic__image" aria-hidden="false" tabindex="0" class="graphic__image js-graphic-set-image-src" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAB6CAYAAAACn7A+AAAQ+0lEQVR4nO3dX2hT2b4H8G8u83p9tFOF6T1ybC2tJkcsPghzwaLmUIf0Vg74h+ShqDU+DHqZSXEotUq5JfFyKzNg1EofLNcRDi3ZTMvJKA7Mg3KOlTmpJretljmnc2i1ffQy9OGC+z7sv/nbpHsl2cn+fiDQZCd7r+y98tu/tdbuXq6NjQ35w4cPICKirfunaheAiKge2DKYrq+vY319vdrFqGncf1QJTq9nz58/x8o/lrHyj2X7BNPl5eVqF4GIaMtsEUyXl5cZTImoplU9mDKQElE9+KiaG6+tQJrAePAOZtNe2wnf0AC8DVUqEgnA41p7so/ZTt8QBqp8wKoWTGsrkGoyfmSJcQSHgljti6LXU9WCkSUMnrXHfsesKs382gykOXh6Ee3rwOx0HGvVLgsRVVXFg2ndBFKNZz86Vl7gr4ymRI5W0WZ+3QVSqhMrkIaCkPTnHeiL9oI9N3aWfsw6bNDVVrFgWt+BdAc+tlHfDZXKfv1vtBn7HbOKNPPrOZCuxacx27GfWQyRw5U9mNZ3IB3GkAT4uhhKiZyurM38+gukGX1rO30Yinpho5YGbUlmn6k9+uCotrjKdQu+rQTSTz/9FIBx84Tt27cLL5dTrK+vc/9R2Tm9nj1//hw7G5V0qizN/PrLSImIChMeTBlIiciJhPeZNjU1oampSfRqiYhsrao3OiEiqlXtg/+W9vwjwJ53y15aWsLS0lK1i1HTuP+oEljPFGUbzbfi2bNnaGxsRFtbW7WLUrNSqRT3H5Wd0+uZ+ftX/ebQRET1gMGUiEgABlMiIgEYTImIBGAwJSISQFAwTWA8GMRwnLebJyJnshxM1+LDCAZ/wg7fThHlISKqSZaDaYN3ANFoL34nojRERDWKfaZERAIwmBIRCcBgSkQkAIMpEZEADKZERAIwmBIRCSDs5tAN3gEMiFoZEVGNYWZKRCQAgykRkQAMpkREArg2Njbkd+/eVbscaZaWltDY2FjtYhARFe0jANi+fXu1y5FGm6DLyXPLWOX0uXmoMpxezzgHFBGRYAymREQCMJgSEQnAYEpEJACDKRGRAJb/nXQtPowhaUV91oG+aC88VldKRFRjLAbTBGZWjyMaVcLnWnwYQ+MJRHsZTonIWSw28z3oNQXOht8dwM7Vd+AcpUTkNGL7TN+uYmXHx2gQulIiIvsTF0zX4hi+A/SxiU9EDiQkmK7FhxEcA85x8ImIHErIaP4YziE6wMY9ETmXtcx0LY6x1eMY8DKQEpGzWctM365iZVZCcNb84k74hgbA+EpETmItmHp6EY32CioKEVHt4r+TEhEJwGBKRCQAgykRkQC2nQPqk+aD1S4GERXh//73l2oXwRZsPQcUEdkf54DiHFBERMIwmBIRCcBgSkQkAIMpEZEADKZUdU8ub0NLk/Y4jydl29I87nmV7fhuz5dtK+RMloNpYjyIYFB9DMfLdJd940eQ+Sj+RzGDUNM2tDQdwr3XZSmkvT06n7HvbLIfXt/E11MAsBdfPn6PxeW76MzxtvSAqz68N/GmwsUtTp76enmm4tsPPVJf0o+/erLSntt2H9Yei8F0De929CEajSIajaJvh4Sh8YSYkuWx58pfsLj8HouPr2MPgIWRgxWspDXq9U34zj0EAPjG3mNx+Vv48Ao3PrfTD6kNv2nO9boSGC5OAWi9junl91hcfo9bPQDmB3G8rJnsVswg1HQQN+YB9Hyr1NXlv+DLVgBTp6oXvI7eVcuS+2RF1lkMpg3weo3bQXv2d1gsTgmaL0FSAyqm/kPNsnJkBJdn1LPwKUgAgFe4ccQ4Q7+5fcieGVtZ7EXzvwBAFyLL77EYv4TdesZuZDH6PvHexBt1n/pu39Tfp7QIZjL2df79lr2PlW29uX0ILUcGsQAAeIiLObK3N7fPKoEJJ3Erfgm71dc7R9UAhYf4+va8eozPI3TZXMb5jG2fxXeZhcvK2DP2g/c8Qt7sZfk8uazWs9brmB7tUl9txdn4t/ABwPwgxh5l7mMAOY5DVjae8d7Q7ZvwZS5/fRM+LZgDkM5lZsjnMXp5G1rUk6tyQsqd7WeXkQoR2mea+GkWHfsreK/95mP4rBUAXuG7H+bx5LJSiYzsC8DUKYRw13hubk4+Oo/jI68AnMSt5feYvrIXsF3GJoBpP904srVMbmFkEBJO4paaZS2MnNL39a0edd059tub24fS9vHi2EkAgHTuEH48/FRvYejL9QCk+GXxlfJHjy8jo2rFb1rVsi3+rL72ENKU0XqRDn+PL0ZeQTvm01eABXOvkJ6xq3VCL5tpH80/hKTXqfeIHC20l+bxN3X9e7qP6YFfsQvNankXf968a+rN7UO4qH8X9cQxP4gvTN1a0sggFlqvY3rZCNRf/HAMkvZ+GOXWvhsA7Bs1PdezfW0df8SPamLyY+xVnu9CuVgPpolxvc/0p/1RVHYKKOMHBQCdo+YKv3nlffIn5ey858pldALYfeGrjApVL1pxNq4FPTUD3EIG7hu7i0604l+79yov9HyLyFGg8/fqD3P+f5D+j4XGD1L5LICjl9UfunICLNaell1Zr33Ssjf7ja3X8Z8XlAP/5oc/Kllvz1c42wzsvnBPDzK5lhtle4jvzRmo+j1L0bKrNeOV9Lq6md0XnionhAutyH3iAIC9+PLrS9iNLhzrybW8FNo61OPy+nt8p7YIPr9QQsEdzPK0JeZ7mibGgwhO+zA04K3QDKVGJqCYQUhvzhf/2YWRg2gZEV442+kcfY/FUSNbvHHkEPD4qzJu8We8zoqXamAocTBdCRLpP2o9a82j6OVTp9AyVVp5NqOcwM3lzayrm5nHPa/RXN+McmIp/H030xm8jj1Tg1iIfY8n0E40mS0CykdoM9/T24eOlVW8FbnSQvSz5158dhi451UCaVrTKC/jbK8PaumPp0qmUqf0DByv8Prv5dyS0TowlBZU9Oxz/k1GF8IMvlcDoO/3XcglZ+aaa7k+UGQ8Ss1EFfkySJjqaq6sNZvWZaWV7VbPVspTIq07aH4QF0fUFkWefUvZLM8BFU+Yn05jducONFosVHFmENIGL3q+wtlmIwtq2dWaVnnTGQFE+zEtjIzabERYLG0gQb+M7JGkZu8nceyoEfCkP80Ar2+q/YwiGMFF+i+1P/XRqJpt7cVnhzcPKkbXyyCOmwanzAM95/IEvt271BtwqAOUxmBW7uUidAa1QdFTpsv25nHvc62uKl0G+rbVLiX9+6jv1/teW3bBfOIo1ab9s2ldM6YuHABK/djadp3IWjBt+Bird4zrTIdeHCh7E39h5KA68qhUPt+YNmjRhYg+gLDNNEqs6cK5K3uN5U3n8cuFp+qgk9aPWIkLxytP6yvU950+6KL0gZ792ggALUcG0dJzcpM1Fq9z1HwZk3nbxWb/XYiYLy1Sj9HFKShZm2mEP8vRu8ag4pFtOB77A77sSV+uDMRoV3gIuKKj+RIkdTDHqKum5vrUKWW0/uhdY+DuyDZcnD8Jn35uMY6Jso5iu65Mn/935Rgqn89Rn039w+arKHYf/oM6IAg28Uvk2tjYkD98+FDtcqR59uwZ72dKdcjUp996HdOFTgRVY5TRN1Zcd0fzJ/9c9lLZlfkWfNYHoIioSMr1vZFqF6OQtC6gKpelxjCYEhXr0XnjYvecSum+sCftckE28UvHZj4RWcJmvqmZv76+XtUC5TLz5/LcMoWIxHL6HFCpVAqAjTPTxsZGR88tY5X5jElULk6vZ5wDiohIMAZTIiIBGEyJiARgMC0kFYHH5UEkVcqHJARcLgRK+5cVIqpxDKYFpGYeYM59Gl2l9K9Lk5iAHyd8ZSsWEdmQwGCawHgwiDLPWlKSVMQDl8sFT2ZqKQXgcrn0R9Zy5dOYeTAH/7UQjFiqZJ0uVyDv/0pLkxNwh/vVuzJp71cfngjStlSoHKkIPObP5kh1pYCyjFkwlUVG/cxXD0khLJiuxacxK2pllilB7AyuIezOsawbiMkyZFmGHPNjrv9MdlM+NYMHc0aGqQTmSZyI+Qtud3LCjdNqKispG1K2I8fgn+vHGW1DqQg83S8RTqrLk2Ggv10NjClEzjzAadMy90S3ETTVQDt5IoZCpSGyzm/8VmQZ8n02ufIRE0zX4hh7cQC+Ck4BVZgP92UZidBv8yy7D71K+E7Ajzkkl9LflZp5gDn/Cf19baEEZPPncpEmMWHqFvDdl2HUPR9O+IE5dUPK+q8hpKW9bSFc8wMTkxKANoQSCdOyLpx2Ay8XU/p7E7J53URUbQKC6RriYy9w4JwXH1tfWeWlFvESbrSnxV21iV9ix6c0OQH36S7k7mJNYfEl4FY3tJSc0//W/LbdDbxcRHanwxKSc8C+FudeHE3VMoFuvZlf6mCss1i+0UlifAgvDgxhoAGwUXdp0aRwP+b8MSTa0l5E/5wfsVJiaSqCqxNunE7mCXjaOhNt0AIr2otd9VVMuMNIMhOlSvLdhyzf159KARe62wNo2ayF5lDWMtPEOO6gDwPeysz4JFoq4kH3yzCSGe1laXICMDXxi1pXoZF/vX9Uq4RtaNmXZ0X7WtIzWymA9v59iCVCeTJeosrw3Y/Bj5dYZHaak4XMdA3x6VlgZRZB88jTbBCrviHbB9hUxKMEKTkzSCmDSOGS0kBt5D+RHfBSEXja+7EvJht9oCql/9R4MavpLwXg6n6JcDLBTICqL7WIEhpUjmMhmDbAOxCF1/RKYrwa0z2XTgq4lIw0K5BCH0TK11rPSR35v5YZ8fRgmB1IfSf8QPdVRPp9yrKMbgIj2DOQUnVIAQ8W+42BUCncjzl3GP/NJlJuGxsb8q+//irk8fSbgPzNU+vrefz4sZxMJuWti8l+QEbGwx1OynIyLLtzLIM7LCdlWY751fdlSIbd2Z+BX45py/yxzE/IYXeO7cAta6vPXKexitzl17aX7zuYi2Bt/xHJshzz5/yNmDm9npm/P2/Bl0ZCwHUV7clEViaZXwoRTzuS1+x1qZLTb41GleH0esZb8OWTcZ1oUTIu7iciZ+IcUGa++5BLDYptISTkspSGiGoIM1MiIgFcGxsb8rt376pdjjRLS0tobGysdjGIiIr2EQBs37692uVIs7Sk/P+6kzu2rXL6wABVhtPrGQegiIgEYzAlIhKAwZSISAAG00I4BxQRFYnBtADOAUVExbIcTNfiwwgGg8bDRpNACZ0Dqog5mQDOAUX1JIWIxzwHVP65z0hQZtrRF0U0qj5sccso0XNAbTInk2ndnAOK6kUqcgYPTifV+ptE2D2Bbp6587IcTN+urogoh2Ci54DaZE4mDeeAojrSFkogYVRCdJ3OykzIREhmOntHa+aP197UJVuaAyr3nEycA4rql4Rwf+nzojmJ5RudeHqjiPYqf6/FhzE0HMfQgBf2vs++YStzQOWck4lzQFHdUW4v2T+nPHOHk0iwDuYldDS/wXsOPrzAX9dErrV8tjQHVJ45mTgHFNWfNoQSWp+/jGvJdg5CFSD4FnxvsbqyA/trIC3d0hxQeedk4hxQVP98/WG4Jx4oE+rxzJ7FYmaawLjpUqi1+DRmO/bDDuP5hUgBF9ofnEYy15S1eW4QnYp44OoGYnKOu/Dnu0G0FICrXRmVzxws8p3wAxNXjasItG6CLmMOqLzbI6oAKZD+DyupmQeYwz6w6z4Pa3NAPZW/CQTkgPa4Min/LGAuKfvNAVV4TibOAUV1KaueqfXP/BaH1zPOAZUX54AiKoXT6xlvwZcP54Aioi3iHFBmnAOKiLaImSkRkQCcA4qISADOAVWnnD4wQJXh9Hpm/v7/D4DGj0k5fdZTAAAAAElFTkSuQmCC" data-large="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/es-XL/assets/8673cdecd9e4454bb7c30d1dfb3791eb.png" data-small="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/es-XL/assets/8673cdecd9e4454bb7c30d1dfb3791eb.png" alt="de1-5.4.5-2">
+
+                            <!--?lit$5885060395$-->
+
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></graphic-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bd0bcd78b26500186798c9" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bd0bcd78b26500186798c9" class="63bd0bcd78b26500186798c9 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bd0bcd78b26500186798c9" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><opentextbox-view modelid="63bd0bcd78b26500186798ca" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="63bd0bcd78b26500186798ca" class="component opentextbox 63bd0bcd78b26500186798ca  is-full is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bd0bcd78b26500186798ca" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body openTextBox__body">
+                        <div class="component__body-inner openTextBox__body-inner"><!--?lit$5885060395$--><ol start="1" style="list-style-type:lower-alpha"><li>En una celda vacía, ingrese la función =LARGE($E$4:$E27,1). <p>Esta función mira las entradas de la celda E4 a E27 y devuelve el valor más alto. </p></li></ol></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5885060395$--> <div class="openTextBox__preText"><!--?lit$5885060395$-->¿Qué valor se devolvió?
+</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5885060395$-->Answer Area
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Escriba sus respuestas aquí.
+" aria-label="Escriba sus respuestas aquí.
+">&lt;!----&gt;43
+&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  show">
+                        <!--?lit$5885060395$-->
+                      <!--?lit$5885060395$-->Respuesta: 43
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer hide"><!--?lit$5885060395$-->Mostrar respuesta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer show"><!--?lit$5885060395$-->Ocultar respuesta</button>                    
+                      </div>
+                      <!--?lit$5885060395$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bd0bd9d9c5f600e6b30e0e" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bd0bd9d9c5f600e6b30e0e" class="63bd0bd9d9c5f600e6b30e0e block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bd0bd9d9c5f600e6b30e0e" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><opentextbox-view modelid="63bd0bdad9c5f600e6b30e0f" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="63bd0bdad9c5f600e6b30e0f" class="component opentextbox 63bd0bdad9c5f600e6b30e0f  is-full is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bd0bdad9c5f600e6b30e0f" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body openTextBox__body">
+                        <div class="component__body-inner openTextBox__body-inner"><!--?lit$5885060395$--><ol start="2" style="list-style-type:lower-alpha"><li><p>Para obtener los 5 valores más altos, modifique las funciones a <strong>=LARGE($E$4:$E27,ROW($1:5))</strong>. </p><p>Esto devuelve los cinco valores más altos. Para devolver más valores, cambie el “5” al final de la función por el número de valores que desea devolver. </p></li></ol></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5885060395$--> <div class="openTextBox__preText"><!--?lit$5885060395$-->¿Qué función devolvería los 6 valores más bajos?
+</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5885060395$-->Answer Area
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Escriba sus respuestas aquí.
+" aria-label="Escriba sus respuestas aquí.
+">&lt;!----&gt;1
+3
+3
+3
+4
+4
+&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  show">
+                        <!--?lit$5885060395$-->
+                      <!--?lit$5885060395$-->Respuesta: =SMALL($E$4:$E27, ROW($1:6))
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer hide"><!--?lit$5885060395$-->Mostrar respuesta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer show"><!--?lit$5885060395$-->Ocultar respuesta</button>                    
+                      </div>
+                      <!--?lit$5885060395$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bd0d175e64e000f15e7d1d" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bd0d175e64e000f15e7d1d" class="63bd0d175e64e000f15e7d1d block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bd0d175e64e000f15e7d1d" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><text-view modelid="63bd0d175e64e000f15e7d1e" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bd0d175e64e000f15e7d1e" class="component text 63bd0d175e64e000f15e7d1e  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5885060395$--><p>Una vez que se identifican los valores atípicos, el siguiente desafío es qué hacer con ellos.  Los valores atípicos pueden indicar errores en los datos o pueden ser datos válidos que deben investigarse para saber por qué parece ser una anomalía. Hay un par de formas en que un analista de datos puede lidiar con los valores atípicos. </p><ol start="1"><li><p>Eliminarlos. En un conjunto de datos grande, la eliminación de algunos valores atípicos probablemente no afecte el análisis general. Sin embargo, es importante crear una copia de los datos para poder investigar qué causó los valores atípicos en primer lugar. En este ejemplo, se podría eliminar la fila 72 del conjunto de datos de ventas de bicicletas. </p></li></ol><ol start="2"><li><p>Normalícelos (ajuste su valor). El valor de los valores atípicos se cambia para estar ligeramente por encima del valor máximo en el conjunto de datos. Este es un buen método si no sesga los datos. Existen varios métodos estadísticos para normalizar los datos.  Investigue los diversos métodos antes de ajustar aleatoriamente los valores de los datos. En el conjunto de datos de ventas de bicicletas de ejemplo, el valor de Order_Quantity del 19 de diciembre de 43 a 20 podría estar justo por encima del valor máximo de 19. </p></li></ol></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bd0d8a4d4bb60023341a17" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bd0d8a4d4bb60023341a17" class="63bd0d8a4d4bb60023341a17 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bd0d8a4d4bb60023341a17" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><opentextbox-view modelid="63bd0d8a4d4bb60023341a18" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="63bd0d8a4d4bb60023341a18" class="component opentextbox 63bd0d8a4d4bb60023341a18  is-full is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bd0d8a4d4bb60023341a18" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body openTextBox__body">
+                        <div class="component__body-inner openTextBox__body-inner"><!--?lit$5885060395$--><h2>Preguntas de reflexión</h2></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5885060395$--> <div class="openTextBox__preText"><!--?lit$5885060395$-->Enumere los factores que podrían determinar si los datos atípicos deben considerarse o no en el análisis final de un conjunto de datos.
+</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5885060395$-->Answer Area
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Escriba sus respuestas aquí.
+" aria-label="Escriba sus respuestas aquí.
+">&lt;!----&gt;Dependiendo de los escenarios a proyectar para la toma de desiciones se deben o no tomar en cuenta ya que propositos de ofertas y riesgo no seria bueno tomar esos sesgos en considerarion para un apto analisis de datos &lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  show">
+                        <!--?lit$5885060395$-->
+                      <!--?lit$5885060395$-->Las respuestas pueden variar. Puede incluir el tamaño del conjunto de datos, el tamaño de la muestra del valor atípico, el propósito del análisis y la importancia del valor atípico con respecto a la mayoría de los datos.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer hide"><!--?lit$5885060395$-->Mostrar respuesta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer show"><!--?lit$5885060395$-->Ocultar respuesta</button>                    
+                      </div>
+                      <!--?lit$5885060395$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bd0dd406763100d1322bfb" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 7.69231%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bd0dd406763100d1322bfb" class="63bd0dd406763100d1322bfb block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bd0dd406763100d1322bfb" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5885060395$--><!----><text-view modelid="63bd0dd406763100d1322bfc" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bd0dd406763100d1322bfc" class="component text 63bd0dd406763100d1322bfc  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5885060395$--><h2>Actividad de Desafío</h2><p>Considere situaciones en las que los datos atípicos podrían tener un impacto significativo en el análisis de datos final si se excluyen de la consideración. </p></div>
+                      </div>
+                    </div>
+                  <!--?lit$5885060395$-->
+                  <!--?lit$5885060395$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$5885060395$-->
+                    </div>
+                </div>
+            </div>
+        <sgpluse-opentextboxcontroller-view modelid="" is-touch="false" fullscreen="true" device="large" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+            <div class="openTextBoxController__button-container">
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__showButton show-answer show"><!--?lit$5885060395$-->Mostrar todas las respuestas</button>    
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__hideButton hide-answer hide"><!--?lit$5885060395$-->Ocultar todas las respuestas</button>    
+                <button class="btn-text resetbtn openTextBoxController__resetButton"><!--?lit$5885060395$-->Borrar mis respuestas</button>         
+            </div>
+            <!--?lit$5885060395$--><hr>
+            <!--?lit$5885060395$-->
+                <div class="post-text" tabindex="0">
+                    <!--?lit$5885060395$-->© 2017 - 2023 Cisco and/or its affiliates. All rights reserved. Cisco Public
+                </div>
+                   
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></sgpluse-opentextboxcontroller-view><style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style><script></script>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document?.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      let event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        ?.querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document?.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      ?.querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document?.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </body></html>
